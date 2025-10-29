@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Naman Gajjar</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  </head><body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="logo">N</div>
+        <button class="menu-toggle" aria-label="Menu" aria-expanded="false">☰</button>
+        <nav class="main-nav">
+          <a href="#about" class="aboutlink">About me</a>
+          <!-- <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a> -->
+          <a class="cta" href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-left">
+          <h1>I'm <span class="accent">Naman Gajjar</span><br /><span class="big">Full Stack web Developer</span></h1>
+          <p class="hero-lead">I build fast, modern web experiences with React and Node.</p>
+          <div class="hero-actions">
+            <a class=" primary" href="#projects">My Projects</a>
+            <a class="btn ghost" href="#contact">Contact</a>
+          </div>
+        </div>
+
+        <div class="hero-art">
+          <img src="/IMG_20250114_190710_216.jpg" alt="">
+        </div>
+    </section>
+
+    <section id="about" class="about container">
+      <h2>WHO AM I ?</h2>
+      <p>I am a full-stack website developer specialized in React/Next.js and Node. I enjoy building delightful
+        interfaces and fast APIs.</p>
+      <a class="btn" href="#projects">About me</a>
+    </section>
+
+
+    <section id="skills" class="skills container">
+      <h2>MY SKILLS</h2>
+      <div class="skills-grid">
+        <div class="skill">HTML5</div>
+        <div class="skill">CSS3</div>
+        <div class="skill">JavaScript</div>
+        <div class="skill">React</div>
+        <div class="skill">Next.js</div>
+        <div class="skill">Node.js</div>
+        <div class="skill">Tailwind</div>
+        <div class="skill">MongoDB</div>
+      </div>
+      <!-- <div class="years-card">
+          <div class="years">4</div>
+          <div class="years-sub">Years Experience Working</div>
+          <a class="btn small" href="#contact">Download my CV</a>
+        </div> -->
+    </section>
+
+    <section id="projects" class="projects container">
+      <h2>TOP <strong>3</strong> WORKS</h2>
+      <div class="projects-strip">
+        <a href="https://namanprojects.github.io/baps.chatbot/"><div class="project-card p1">
+          <p class="num">1</p>
+          <p class="txt t1">AKSHĀR.AǏ</p>
+        </div></a>
+       <a href="https://namanprojects.github.io/vastrasanghar/"><div class="project-card p2">
+          <p class="num">2</p>
+          <p class="txt t2">VASTRASANGĀR</p>
+        </div></a>
+        <a href="https://namanprojects.github.io/live.baps.kalol/"><div class="project-card p3">
+          <p class="num">3</p>
+          <p class="txt t3">BAPS.KĀLOL.LǏVE</p>
+        </div></a>
+      </div>
+      </div>
+      <a class="btn" style="margin-top: 40px;" href="#projects">Show All</a>
+    </section>
+
+    <section id="contact" class="contact container">
+      <h2>LET'S HAVE A CHAT</h2>
+      <div class="contact-card">
+        <form id="contactForm" class="contact-form">
+          <input type="text" id="from_name" name="from_name" placeholder="Your name" required />
+          <input type="email" id="from_email" name="from_email" placeholder="Email address" required />
+          <textarea id="message" name="message" placeholder="Your message" required></textarea>
+          <button type="submit" class="primary full">
+            <span class="btn-text">Send Message</span>
+            <span class="btn-loading" style="display: none;">Sending...</span>
+          </button>
+        </form>
+        <div id="successMessage" class="form-message success" style="display: none;">
+          Thank you! Your message has been sent.
+        </div>
+        <div id="errorMessage" class="form-message error" style="display: none;">
+          Sorry, something went wrong. Please try again.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">© naman gajjar— Portfolio</div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>
