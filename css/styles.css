@@ -21,7 +21,8 @@
 
 html,
 body {
-    height: 100%
+    height: 100%;
+    overflow-x: hidden;
 }
 
 body {
@@ -437,40 +438,7 @@ body {
     }
 }
 
-@media (max-width: 900px) {
-    .hero-inner {
-        grid-template-columns: 1fr;
-        text-align: center;
-        padding-top: 40px;
-    }
 
-    .hero h1 {
-        font-size: 48px;
-    }
-
-    .hero-actions {
-        justify-content: center;
-    }
-
-    .hero-greeting {
-        margin-top: 0;
-    }
-
-    .art-circle {
-        width: 300px;
-        height: 300px;
-    }
-
-    .hero-art img {
-        width: 300px;
-        height: 380px;
-        margin-top: 40px;
-    }
-
-    .floating-badge {
-        display: none;
-    }
-}
 
 /* About Section */
 .about {
@@ -1091,176 +1059,266 @@ pre {
     color: var(--muted-2)
 }
 
-/* Responsive */
-@media (max-width:980px) {
-    .hero-inner {
-        grid-template-columns: 1fr
-    }
+/* =========================================
+   Responsive Design
+   ========================================= */
 
-    .hero-art {
-        order: -1;
-        height: 260px
-    }
-
-    .skills-grid {
-        grid-template-columns: repeat(2, 1fr)
-    }
-}
-
-@media (max-width:520px) {
-    .skills-grid {
-        grid-template-columns: repeat(1, 1fr)
-    }
-
-    .project-card {
-        min-width: 140px
-    }
-
-    .hero-left .big {
-        font-size: 28px
-    }
-}
-
-/* Extra mobile-first tweaks for small phones */
-@media (max-width:420px) {
-
-    :root {
-        --container-padding: 16px
-    }
-
-    body {
-        font-size: 15px
-    }
-
+/* Tablet & Smaller Desktop (max-width: 1024px) */
+@media (max-width: 1024px) {
     .container {
-        padding: var(--container-padding)
+        padding: 0 32px;
     }
 
-    /* Header */
-
-    .header-inner {
-        padding: 8px 1px 0
+    .hero h1 {
+        font-size: 72px;
     }
 
-    .main-nav a {
-        margin-left: 10px;
-        font-size: 14px
+    .about-grid,
+    .contact-wrapper {
+        gap: 40px;
     }
 
-    /* Hero */
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+}
+
+/* Tablet & Large Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+
+    /* Hero Section */
     .hero {
-        padding: 2px 0
+        padding-top: 120px;
+        padding-bottom: 60px;
+        min-height: auto;
     }
 
     .hero-inner {
-        text-align: center;
         grid-template-columns: 1fr;
-        gap: 16px
+        text-align: center;
+        gap: 60px;
+    }
+
+    .hero-left {
+        order: 1;
     }
 
     .hero-art {
-        height: 220px
+        order: 2;
+        justify-content: center;
+        margin-top: 0;
     }
 
-    .hero-art img {
-        width: 70vw;
-        height: 70vw;
-        max-width: 280px;
-        max-height: 280px;
-        border-radius: 24px;
-        object-fit: cover
+    .hero-greeting {
+        margin: 0 auto 16px;
     }
 
-    .hero-left h1 {
-        font-size: 25px
-    }
-
-    .hero-left .big {
-        font-size: 22px
+    .sub-headline {
+        font-size: 24px;
+        margin-bottom: 20px;
     }
 
     .hero-lead {
-        font-size: 14px
+        margin: 0 auto 30px;
+        font-size: 16px;
     }
 
     .hero-actions {
+        justify-content: center;
+    }
+
+    .art-circle {
+        width: 400px;
+        height: 400px;
+    }
+
+    .hero-art img {
+        width: 320px;
+        height: 400px;
+        transform: rotate(0deg);
+        margin-top: 0;
+    }
+
+    .floating-badge {
+        display: none;
+    }
+
+    /* About Section */
+    .about {
+        padding: 60px 24px;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .about-text h2::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .code-card {
+        margin-top: 30px;
+        text-align: left;
+    }
+
+    /* Experience Section */
+    .experience {
+        padding: 60px 0;
+    }
+
+    .timeline {
+        padding-left: 0;
+        border-left: none;
+        max-width: 100%;
+        margin: 0 24px;
+        position: relative;
+    }
+
+    .timeline::before {
+        content: '';
+        position: absolute;
+        left: 0px;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    .timeline-item {
+        padding-left: 30px;
+        margin-bottom: 30px;
+    }
+
+    .timeline-dot {
+        left: -7px;
+    }
+
+    /* Contact Section */
+    .contact {
+        padding: 60px 24px;
+    }
+
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .contact-info {
+        align-items: center;
+        text-align: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+}
+
+/* Mobile Devices (max-width: 480px) */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 20px 20px 20px;
+    }
+
+    .contact h2 {
+        padding: 20px 0 0 0;
+    }
+
+    .header-inner {
+        justify-content: center;
+    }
+
+    /* Typography Adjustments */
+    .hero h1 {
+        font-size: 38px;
+        /* Slightly smaller for better fit */
+        letter-spacing: -1px;
+    }
+
+    .sub-headline {
+        font-size: 20px;
+    }
+
+    .section-title,
+    h2 {
+        font-size: 28px !important;
+    }
+
+    /* Hero Adjustments */
+    .hero-actions {
         flex-direction: column;
-        gap: 12px
+        width: 100%;
+        gap: 16px;
     }
 
     .btn {
         width: 100%;
-        text-align: center
+        justify-content: center;
     }
 
-    /* Skills */
+    .hero-art img {
+        width: 260px;
+        height: 320px;
+    }
+
+    .art-circle {
+        width: 280px;
+        height: 280px;
+    }
+
+    /* Skills Grid */
     .skills-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 17px 21px;
-        margin: 30px;
+        gap: 16px;
     }
 
-    .skill {
-        padding: 18px;
-        font-size: 14px
+    .skill-card {
+        padding: 20px 10px;
     }
 
-    /* Projects strip becomes horizontal scroll */
-    .projects-strip {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 55px 21px;
-        margin: 20px;
-        padding-bottom: 15px
+    .skill-card i {
+        font-size: 36px;
     }
 
-    .num {
-        display: none;
+    .skill-card span {
+        font-size: 13px;
     }
 
-    /* .project-card{
-        width:200px;
-        height:240px;}  */
-    .skills h2,
-    .projects h2 {
-        margin-bottom: 30px;
+    /* Projects */
+    .projects {
+        padding: 60px 0;
     }
 
-    .t1 {
-        left: 20px;
+    .projects-grid {
+        grid-template-columns: 1fr;
+        padding: 0 20px;
     }
 
-    .t2 {
-        left: 4px;
-    }
-
-    .t3 {
-        left: 3px;
-    }
-
-    /* Contact card & form */
-    .contact {
-        margin: 20px 12px;
-        padding: 20px
-    }
-
-    .contact-card {
-        padding: 18px;
-        border-radius: 16px
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-        padding: 12px;
-        font-size: 15px
-    }
-
-    .contact-form textarea {
-        min-height: 120px
+    .project-image {
+        height: 180px;
     }
 
     /* Footer */
     .site-footer {
-        padding: 18px
+        padding: 20px 0;
+        font-size: 14px;
+    }
+
+    /* Timeline Mobile Tweak */
+    .timeline {
+        margin: 0 16px;
+    }
+
+    .timeline::before {
+        left: 0px;
+    }
+
+    .timeline-item {
+        padding-left: 25px;
+    }
+
+    .timeline-dot {
+        left: -7px;
     }
 }
